@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+
+{% block blogs %}
+<center><h1>Welcome to Bhuwan's Blogs</h1></center>
+<hr>
+<h3>Latest Blogs</h3>
+<div class="container blogtext">
+{% for blog in blogs.all %}
+
+<a href="#"><h2>{{ blog.title }}</h2></a>
+<br>
+<img src="{{ blog.image.url }}" width="50%" height="75%">
+<br>
+{{ blog.pub_date_edit }}
+<br>
+{{ blog.summary }}...<a href="">read more</a>
+
+{% endfor %}
+</div>
+
+
+{% endblock %}
